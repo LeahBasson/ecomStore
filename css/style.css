@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* custom variables */
+:root{
+        --primary: black;
+        --secondary: white;
+        --alternative: rgb(18, 21, 37);
+        --awesome: #E59BE9;
+        --mainBoxShadow: .5vw .5vw .3vw var(--alternative), inset .8vw 1vw .2vw var(--secondary), 1vw 1vw .2vw var(--secondary); 
+        --borderColor: #8644A2;
+        --elementShadow: .2vw .3vw .2vw #FFEBB2;  
+        --bgHeaderFooter: #F1E5D1;
+}
+
+@property --top-left{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --top-right{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+}
+
+@property --bottom-left{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --bottom-right{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+/* Navbar & footer */
+:is(.navbar, footer){
+    background-color: var(--bgHeaderFooter);
+}
+
+/* Navbar */
+img[alt='logo']{
+    width: 19rem;
+    aspect-ratio: 4/1;
+    object-fit: cover;
+    object-position: center;
+    transition: all .5s;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+/* Navbar */
+.navbar-nav .nav-link:hover{
+    color: var(--alternative);
+}
+
+.navbar-nav .nav-link{
+    font-family:  "Inria Serif", serif;
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-right: 4rem;
+}
+
+
+
+/* Grid Layout */
+:is(body) {
+    display: grid;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Create 3 rows */
+:is(body){
+    grid-template-rows: auto minmax(1fr, 100dvh) auto;
+}
+
+section {
+    scroll-margin-block: 5rem;
+}
+
+/* To change the color of the toggler */
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(18, 21, 37)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* To change the color of the toggler when you hover */
+.navbar-toggler .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(18, 21, 37)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
